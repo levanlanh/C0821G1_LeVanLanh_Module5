@@ -1,0 +1,25 @@
+<p>list-student works!</p>
+<div class="container">
+  <br/>
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>No</th>
+      <th>name</th>
+      <th>gender</th>
+      <th>point</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of student;index as i">
+      <td>{{i + 1}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.gender}}</td>
+      <td>{{p.point}}</td>
+      <td>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
