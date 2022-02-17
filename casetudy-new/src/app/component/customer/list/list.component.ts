@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CustomerService} from '../../../service/customer.service';
 import {Customer} from '../../../model/customer';
 
@@ -9,9 +9,24 @@ import {Customer} from '../../../model/customer';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) { }
-customers: Customer[] = [];
-  ngOnInit(): void {
+  constructor(private customerService: CustomerService) {
   }
 
+  customers: Customer[] = [];
+  id: number;
+
+  ngOnInit(): void {
+    this.getAll();
+  }
+
+  getAll() {
+    this.customerService.getAll().subscribe(value => {
+      this.customers = value;
+      console.log(this.customers);
+    });
+  }
+
+  getId(id: number) {
+    this.id = id;
+  }
 }

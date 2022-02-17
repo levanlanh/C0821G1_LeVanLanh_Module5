@@ -6,6 +6,7 @@ import { CreateComponent } from './create/create.component';
 import { ListComponent } from './list/list.component';
 import { DeleteComponent } from './delete/delete.component';
 import { EditComponent } from './edit/edit.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -13,9 +14,10 @@ import { EditComponent } from './edit/edit.component';
     exports: [
         ListComponent
     ],
-    imports: [
-        CommonModule,
-        CustomerRoutingModule
-    ]
+  imports: [
+    CommonModule,
+    CustomerRoutingModule,
+    ReactiveFormsModule
+  ]
 })
 export class CustomerModule { }
